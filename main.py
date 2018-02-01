@@ -218,49 +218,13 @@ def emailwindow():
 def html(nombre, balance_c, balance_l, es_cobranza):
     cobranza_si = ""
     if es_cobranza.lower() == "si":
-        cobranza_si = "<p><span>Costas de Abogado serán calculadas al coordinar reunión</span></p>"
+        cobranza_si = "<p><span>Condicional Cobranza</span></p>"
     css = """
                 <style type="text/css">
-                    * {box-sizing: border-box;}
-                    .contenedor {
-                        width: 700px; 
-                        height: auto; 
-                        padding: 5px; 
-                        padding-bottom: 25px;
-                        border: 2px solid #922E8D;
-                        border-radius: 10px;
-                    }
-                    p span {display: block; font-size: 18px;}
-                    body {
-                        font-family: Arial;
-                        font-size: 20px;
-                    }
-                    h3 {font-size: 24px;}
-                    table {
-                        border: 1px solid rgba(0,0,0, .4);
-                        border-collapse: collapse;
-                        width: 500px;
-                        text-align: center;
-                    }
-                    th {
-                        border: 1px solid rgba(0,0,0, .4); 
-                        padding: 10px 20px; 
-                        background: #D46C18; 
-                        color: white;
-                    }
-                    td {
-                        border: 1px solid rgba(0,0,0, .4); 
-                        padding: 10px 20px;
-                    }
-                    tr:hover {background: #941D8E; color: white;}    
-                    .final {
-                        width: 400px;
-                        padding: 6px;
-                        border: 3px solid #922E8D;
-                        border-radius: 15px;
-                    }
+ 
                 </style>
                 """
+
     body_html = """
                 <!DOCTYPE html>
                 <html lang="es">
@@ -270,46 +234,6 @@ def html(nombre, balance_c, balance_l, es_cobranza):
                     {}
                 </head>
                 <body>
-                    <div class="contenedor">
-                        <h3>Estimado {}:</h3>
-                        <p>
-                            <span>Mi nombre es Claudia Castro, soy ejecutiva de normalización del Banco Security</span>
-                            <span>Estoy encargada de regularizar su deuda, que el día de hoy es:</span>
-                        </p>
-    
-                        <table>
-                            <tr>
-                                <th>Deuda Corto Plazo</th>
-                                <th>Deuda Largo Plazo</th>
-                            </tr>
-                            <tr>
-                                <td>{}</td>
-                                <td>{}</td>
-                            </tr>
-                        </table>
-                        {}
-                        <p><span>Las Alternativas de pago son</span></p>
-                        <p>
-                            <span>1) Al contado, cheque por el total de la deuda vencida</span>
-                            <span>2) 30% de abono y saldo en un crédito plazo por Definir</span>
-                        </p>
-                        <p><span>Para ello es necesario:</span></p>
-                        <p>
-                            <span>- Completar estado de situación adjunto</span>
-                            <span>- Acreditar ingresos</span>
-                            <span>* Sujeto a evaluación</span>
-                        </p>
-                        <p><span>Quedo atento a sus comentarios</span></p>
-                        
-                        <div class="final">
-                            <p>
-                                <span>Claudia Castro</span>
-                                <span>Ejecutiva de Normalización | Banco Security</span>
-                                <span>Mail: Claudia.Castro@security.cl</span>
-                                <span>Fono: 225844072</span>
-                            </p>
-                        </div>   
-                    </div>
                 </body>
                 </html>
                 """.format(css, nombre, balance_c, balance_l, cobranza_si)
